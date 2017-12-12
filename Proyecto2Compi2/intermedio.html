@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+     <meta charset="UTF-8" />
+    <title id="tittle"> Basic3D - Edición intermedia
+    </title>
+    
+    
+	<meta content="Proyecto final Compiladores 2" name="description" />
+	<meta content="Mauricio Estuardo Batres Montejo - 201403831" name="author" />
+    
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
+    <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
+    
+     
+</head>
+    <!-- END  HEAD-->
+    <!-- BEGIN BODY-->
+<body class="padTop53 " >
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
+
+         <!-- HEADER SECTION -->
+        <div id="top">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
+                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
+                    <i class="icon-align-justify"></i>
+                </a>
+                <!-- LOGO SECTION -->
+                <header class="navbar-header">
+
+                    <a href="index.html" class="navbar-brand">
+                    <img src="assets/img/logo.png" alt="" /></a>
+                </header>
+                <!-- END LOGO SECTION -->
+                
+
+            </nav>
+
+        </div>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+       <div id="left">
+
+            <ul id="menu" class="collapse">
+
+                
+                <li class="panel">
+                    <a href="index.html" >
+                        <i class="icon-table"></i> Inicio
+	   
+                       
+                    </a>                   
+                </li>
+
+
+
+                <li class="panel ">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
+                        <i class="icon-tasks"> </i> Tipos de ediciones   
+	   
+                        <span class="pull-right">
+                          <i class="icon-angle-left"></i>
+                        </span>
+                       &nbsp; <span class="label label-default">3</span>&nbsp;
+                    </a>
+                    <ul class="collapse" id="component-nav">
+                       
+                        <li class=""><a href="basico.html"><i class="icon-angle-right"></i>Edición básica</a></li>
+                         <li class=""><a href="intermedio.html"><i class="icon-angle-right"></i>Edición intermedia</a></li>
+                        <li class=""><a href="avanzado.html"><i class="icon-angle-right"></i>Edición avanzada</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <!--END MENU SECTION -->
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+            <div class="inner" style="min-height:1200px;" >
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Edición intermedia</h2>
+                    </div>
+                </div>
+                <hr />
+        <div class="row">
+            <div class="col-lg-6">
+                 <div class="box dark">
+                     <header>
+                        <h5>Bloques de funciones y structs</h5>
+                    </header>
+                      <div id="blocklyDiv" style="height: 535px; width: 620px;"></div>
+                      
+                      <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+                          <category name="Funciones" colour="#80a55b">
+                            <block type="principal"></block>
+                            <block type="funcion"></block>
+                            <block type="nombre_funcion">
+                              <field name="Nombre"></field>
+                            </block>
+                          </category>
+                          <category name="Parámetros" colour="#a55ba5">
+                            <block type="parametro">
+                              <field name="type">num</field>
+                              <field name="nombre"></field>
+                            </block>
+                          </category>
+                          <category name="Retornos" colour="#5ba5a5">
+                            <block type="tipo_retorno">
+                              <field name="retorno">void</field>
+                            </block>
+                          </category>
+                          <category name="Elements" colour="#5b80a5">
+                          <block type="struct"></block>
+                            <block type="atributo">
+                              <field name="tipo"></field>
+                              <field name="nombre"></field>
+                            </block>
+                          </category>
+                     </xml>
+                     
+                </div>
+               
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="box dark">
+                    <header>
+                        <h5>Código Basic3d generado</h5>
+                        <div class="toolbar">
+                            <ul class="nav">
+                                <li>
+                                <select id="slcFunciones" onchange="MostrarContenido()" class="form-control">
+                                <option>...</option>
+                                </select>
+                                </li>
+                                <li><button class="btn btn-success btn-md btn-round btn-line" onclick="IniciarAnalisisIntermedio()"><i class="icon-play-circle"></i></button></li>
+                                <li><button class="btn btn-danger btn-md btn-round btn-line" onclick="IniciarDebugIntermedio()"><i class="icon-bug"></i></button></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <div class="body collapse in">
+                        <textarea id="txtEntrada" oninput="ActualizarContenido()" class="form-control" rows="25"></textarea>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box dark">
+                       <header>
+                           <h5>Consola</h5>
+                       </header>
+                        <div class="body collapse in">
+                            <textarea id="txtConsola" class="form-control" rows="20"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            </div>
+        </div>
+       <!--END PAGE CONTENT -->
+
+
+    </div>
+    
+    <div id="footer">
+        <p>&copy;  Mauricio Estuardo Batres Montejo - 201403831 &nbsp;Organización de lenguajes y compiladores 2 &nbsp;</p>
+    </div>
+    <!--END FOOTER -->
+     <!-- GLOBAL SCRIPTS -->
+     
+    <script src="assets/plugins/jquery-2.0.3.min.js"></script>
+     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
+    <!-- END GLOBAL SCRIPTS -->
+    <!-- Definición de blockly para drag and drop -->
+    <script src="blockly/blockly_compressed.js"></script>
+    <script src="blockly/blocks_compressed.js"></script>
+    <script src="blockly/javascript_compressed.js"></script>
+    <script src="blockly/es.js"></script>
+    <script src="blockly/bloques_inter.js"></script> 
+    <script src="assets/intermedioEdit.js"></script>
+    
+    <script src="constantes.js" type="text/javascript"></script>
+     <!-- Llamadas para control de archivos y compilador -->
+    <script src="Analizador/ParseTreeNode.js" type="text/javascript"></script>
+    <script src="Analizador/inicio.js" type="text/javascript"></script>
+    
+    <script>
+       var workspace = Blockly.inject('blocklyDiv', {media: 'blockly/media/', toolbox: document.getElementById('toolbox')});
+        
+       function myUpdateFunction(event) {
+           var code = Blockly.JavaScript.workspaceToCode(workspace);
+       }
+	   workspace.addChangeListener(myUpdateFunction);
+	 </script>
+    
+   
+    
+    
+</body>
+    <!-- END BODY-->
+    
+</html>
